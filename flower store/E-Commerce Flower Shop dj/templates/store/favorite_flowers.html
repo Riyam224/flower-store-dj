@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load social_share %}
+
+
+{% block title %}
+
+Favorite flowers list 
+    
+{% endblock title %}
+
+
+
+{% block content  %}
+
+
+
+<!-- prodcuts section starts  -->
+
+<section class="products" id="products">
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1 class="heading"> favorite<span>products</span> </h1>
+    
+    <div class="box-container">
+        {% for flower in  favorite_flowers   %}
+        
+        <div class="box">
+            <span class="discount">-{{ flower.discount }} %</span>
+            <div class="image">
+                <img src="{{ flower.image.url }} " alt="">
+                <div class="icons">
+                     
+                    <a href="#" class="cart-btn">add to cart</a>
+                    <a href="{% url 'share' %}" class="fas fa-share"></a> 
+                        
+                    </a>
+                </div>
+            </div>
+            <div class="content">
+                <h3>{{ flower.name }} </h3>
+                <div class="price"> ${{ flower.price }} <span>$15.99</span> </div>
+            </div>
+        </div>
+
+        {% empty %}
+
+        <div class="content">
+            <h3> No favorite flowers yet !</h3>
+            
+        </div>
+
+        {% endfor %}
+
+    
+            
+       
+            
+
+    
+
+    </div>
+
+</section>
+
+<!-- prodcuts section ends -->
+
+    
+{% endblock content  %}
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

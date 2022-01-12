@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load social_share %}
+
+{% block title  %}
+
+Product - details 
+    
+{% endblock title  %}
+    
+
+{% block content  %}
+
+
+<!-- header section ends -->
+
+
+<!-- prodcuts section starts  -->
+
+<section class="products" id="products">
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h1 class="heading"> favorite<span>products</span> </h1>
+    
+    <div class="box-container">
+     
+        <div class="box">
+            <span class="discount">-{{ flower.discount }} %</span>
+            <div class="image">
+                <img src="{{ product.image.url }} " alt="">
+                <div class="icons">
+                     
+                    
+                    {% if is_favorite  %}
+
+                    <a href="{% url 'flower_fav' product.id %} " class="fas fa-heart"> </a>
+                    
+                  {% else %}
+                  <a href="{% url 'flower_fav' product.id %} " class="fas fa-heart"> </a>
+                    {% endif %}
+                        
+                    
+                    <a href="{{object.get_add_to_cart_url }}" class="cart-btn">add to cart</a>
+                    <a href="{% url 'share' %}" class="fas fa-share"></a> 
+                </div>
+            </div>
+            <div class="content">
+                <h3>{{ product.name }} </h3>
+                <div class="price"> ${{ product.price }} <span>$15.99</span> </div>
+            </div>
+        </div>
+
+    
+            
+       
+            
+
+    
+
+    </div>
+
+</section>
+
+<!-- prodcuts section ends -->
+
+
+    
+{% endblock content  %}
+    

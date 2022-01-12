@@ -1,0 +1,35 @@
+
+
+{% extends 'base_account.html' %}
+{% load static %}
+{% load social_share %}
+{% load crispy_forms_tags %} 
+
+
+
+
+{% block title  %}
+
+Profile 
+    
+{% endblock title  %}
+    
+
+
+
+{% block content  %}
+
+<div class="container">
+    <h2>{{user}}</h2>
+    <h2>{{user.email}}</h2>
+</div>
+
+
+
+
+    
+{% endblock %}
+    
+
+
+
